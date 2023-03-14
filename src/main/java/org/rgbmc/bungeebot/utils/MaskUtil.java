@@ -8,7 +8,7 @@ public class MaskUtil {
     public static String getMaskQQ(String origin) {
         StringBuilder builder = new StringBuilder(origin);
         StringBuilder mask = new StringBuilder();
-        for (int i = 3; i < builder.length() - 3; i++) {
+        for (int i = BungeeBot.Companion.getInstance().getConfig().getInt("mask.start"); i < builder.length() - BungeeBot.Companion.getInstance().getConfig().getInt("mask.end"); i++) {
             mask.append("*");
         }
         builder.replace(BungeeBot.Companion.getInstance().getConfig().getInt("mask.start"), builder.length() - BungeeBot.Companion.getInstance().getConfig().getInt("mask.end"), mask.toString());
