@@ -37,14 +37,14 @@ class BungeeJoinListener : Listener {
                     event.isCancelled = true
                     if (ipData == null) {
                         event.cancelReason = Color.color(
-                            BungeeBot.instance!!.config!!.getString("kick-msg.ip-unsafe-nodata")
+                            BungeeBot.instance!!.config!!.getString("kick-msg.ip-unsafe-nodata")!!
                                 .replace("%mask_qq%", MaskUtil.getMaskQQ(userDTO.qq.toString()))
                                 .replace("%code%", code.toString())
                                 .replace("%qq%", userDTO.qq.toString())
                         )
                     } else {
                         event.cancelReason = Color.color(
-                            BungeeBot.instance!!.config!!.getString("kick-msg.ip-unsafe")
+                            BungeeBot.instance!!.config!!.getString("kick-msg.ip-unsafe")!!
                                 .replace("%mask_qq%", MaskUtil.getMaskQQ(userDTO.qq.toString()))
                                 .replace("%code%", code.toString())
                                 .replace("%qq%", userDTO.qq.toString())
@@ -52,6 +52,7 @@ class BungeeJoinListener : Listener {
                                 .replace("%city%", ipData.city)
                                 .replace("%isp%", ipData.isp)
                                 .replace("%area%", ipData.area)
+                                .replace("%mask_qq%", MaskUtil.getMaskQQ(userDTO.qq.toString()))
                         )
                     }
                     MapUtil.updatesMap.put(
@@ -86,12 +87,12 @@ class BungeeJoinListener : Listener {
                 event.isCancelled = true
                 if (ipData == null) {
                     event.cancelReason = Color.color(
-                        BungeeBot.instance!!.config!!.getString("kick-msg.ip-unsafe-nodata")
+                        BungeeBot.instance!!.config!!.getString("kick-msg.register-nodata")!!
                             .replace("%code%", code.toString())
                     )
                 } else {
                     event.cancelReason = Color.color(
-                        BungeeBot.instance!!.config!!.getString("kick-msg.ip-unsafe")
+                        BungeeBot.instance!!.config!!.getString("kick-msg.register")!!
                             .replace("%code%", code.toString())
                             .replace("%province%", ipData.province)
                             .replace("%city%", ipData.city)

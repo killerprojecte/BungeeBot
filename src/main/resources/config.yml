@@ -24,7 +24,7 @@ mask:
   end: 3
 #踢出信息
 kick-msg:
-  ip-unsafe-nodata: "&f&l白名单\n&8&m                                                \n&c&l系统检测到您正在一个陌生位置登录账号\n&c&l本次登录需要进行 &e&l身份确认 &c&l以保证账号安全\n&a&l请使用您的QQ: %mask_qq% &a&l向服务器官方群发送\n&e&l验证码: &f&l%code% &c&l有效期 &f&l5分钟\n&c&lIP属地: &f未知\n&8&m                                                \n&c&l由BungeeBot提供支持"
+  ip-unsafe-nodata: "&f&l白名单\n&8&m                                                \n&c&l系统检测到您正在一个陌生位置登录账号\n&c&l本次登录需要进行 &e&l身份确认 &c&l以保证账号安全\n&a&l请使用您的QQ: &f%mask_qq% &a&l向服务器官方群发送\n&e&l验证码: &f&l%code% &c&l有效期 &f&l5分钟\n&c&lIP属地: &f未知\n&8&m                                                \n&c&l由BungeeBot提供支持"
   ip-unsafe: "&f&l白名单\n&8&m                                                \n&c&l系统检测到您正在一个陌生位置登录账号\n&c&l本次登录需要进行 &e&l身份确认 &c&l以保证账号安全\n&a&l请使用您的QQ: &f%mask_qq% &a&l向服务器官方群发送\n&e&l验证码: &f&l%code% &c&l有效期 &f&l5分钟\n&c&lIP属地: &f%province% %city% %isp%\n&8&m                                                \n&c&l由BungeeBot提供支持"
   register-nodata: "&f&l白名单\n&8&m                                                \n&c&l您的账号尚未绑定\n&a&l请加入服务器官方群 &a&l12345678 &a&l并输入注册码\n&e&l验证码: &f&l%code% &c&l有效期 &f&l5分钟\n&c&lIP属地: &f未知\n&8&m                                                \n&c&l由BungeeBot提供支持"
   register: "&f&l白名单\n&8&m                                                \n&c&l您的账号尚未绑定\n&a&l请加入服务器官方群 &a&l12345678 &a&l并输入注册码\n&e&l验证码: &f&l%code% &c&l有效期 &f&l5分钟\n&c&lIP属地: &f%province% %city% %isp%\n&8&m                                                \n&c&l由BungeeBot提供支持"
