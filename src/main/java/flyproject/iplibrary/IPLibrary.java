@@ -8,7 +8,8 @@ import java.sql.SQLException;
 
 public class IPLibrary {
     public SQLData sqlData = null;
-    public IPLibrary(File database){
+
+    public IPLibrary(File database) {
         try {
             sqlData = new SQLData(database);
         } catch (SQLException e) {
@@ -16,7 +17,7 @@ public class IPLibrary {
         }
     }
 
-    public IPData query(String ip){
+    public IPData query(String ip) {
         IPData data = null;
         try {
             data = sqlData.getData(ip);

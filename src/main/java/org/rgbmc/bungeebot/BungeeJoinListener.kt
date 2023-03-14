@@ -24,18 +24,18 @@ class BungeeJoinListener : Listener {
                 if (!userDTO.ip.equals(ip, ignoreCase = true)) {
                     val ipData = ipLibrary!!.query(ip)
                     var code: String? = null
-                    for (key in MapUtil.updatesMap.keys){
+                    for (key in MapUtil.updatesMap.keys) {
                         val otherData: IPUpdateData = MapUtil.updatesMap.get(key)!!
-                        if (otherData.player.equals(event.connection.name)){
+                        if (otherData.player.equals(event.connection.name)) {
                             code = key
                             break
                         }
                     }
-                    if (code==null){
+                    if (code == null) {
                         code = MaskUtil.getRandomString(5)
                     }
                     event.isCancelled = true
-                    if (ipData==null){
+                    if (ipData == null) {
                         event.cancelReason = Color.color(
                             BungeeBot.instance!!.config!!.getString("kick-msg.ip-unsafe-nodata")
                                 .replace("%mask_qq%", MaskUtil.getMaskQQ(userDTO.qq.toString()))
@@ -54,10 +54,17 @@ class BungeeJoinListener : Listener {
                                 .replace("%area%", ipData.area)
                         )
                     }
-                    MapUtil.updatesMap.put(code, IPUpdateData((event.connection.socketAddress as InetSocketAddress).address.hostAddress, event.connection.uniqueId, event.connection.name))
+                    MapUtil.updatesMap.put(
+                        code,
+                        IPUpdateData(
+                            (event.connection.socketAddress as InetSocketAddress).address.hostAddress,
+                            event.connection.uniqueId,
+                            event.connection.name
+                        )
+                    )
                     ProxyServer.getInstance().scheduler.schedule(BungeeBot.instance, object : Runnable {
                         override fun run() {
-                            if (MapUtil.updatesMap.containsKey(code)){
+                            if (MapUtil.updatesMap.containsKey(code)) {
                                 MapUtil.updatesMap.remove(code)
                             }
                         }
@@ -66,18 +73,18 @@ class BungeeJoinListener : Listener {
             } else {
                 val ipData = ipLibrary!!.query(ip)
                 var code: String? = null
-                for (key in MapUtil.registerMap.keys){
+                for (key in MapUtil.registerMap.keys) {
                     val otherData: IPUpdateData = MapUtil.registerMap.get(key)!!
-                    if (otherData.player.equals(event.connection.name)){
+                    if (otherData.player.equals(event.connection.name)) {
                         code = key
                         break
                     }
                 }
-                if (code==null){
+                if (code == null) {
                     code = MaskUtil.getRandomString(5)
                 }
                 event.isCancelled = true
-                if (ipData==null){
+                if (ipData == null) {
                     event.cancelReason = Color.color(
                         BungeeBot.instance!!.config!!.getString("kick-msg.ip-unsafe-nodata")
                             .replace("%code%", code.toString())
@@ -92,10 +99,17 @@ class BungeeJoinListener : Listener {
                             .replace("%area%", ipData.area)
                     )
                 }
-                MapUtil.registerMap.put(code, IPUpdateData((event.connection.socketAddress as InetSocketAddress).address.hostAddress, event.connection.uniqueId, event.connection.name))
+                MapUtil.registerMap.put(
+                    code,
+                    IPUpdateData(
+                        (event.connection.socketAddress as InetSocketAddress).address.hostAddress,
+                        event.connection.uniqueId,
+                        event.connection.name
+                    )
+                )
                 ProxyServer.getInstance().scheduler.schedule(BungeeBot.instance, object : Runnable {
                     override fun run() {
-                        if (MapUtil.registerMap.containsKey(code)){
+                        if (MapUtil.registerMap.containsKey(code)) {
                             MapUtil.registerMap.remove(code)
                         }
                     }

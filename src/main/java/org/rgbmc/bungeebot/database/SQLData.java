@@ -10,7 +10,6 @@ import org.rgbmc.bungeebot.data.UserDTO;
 
 import java.sql.SQLException;
 import java.util.List;
-import java.util.UUID;
 
 public abstract class SQLData {
     public static Dao<UserDTO, String> playerDTOs;

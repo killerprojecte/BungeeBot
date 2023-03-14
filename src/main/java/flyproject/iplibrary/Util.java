@@ -1,8 +1,5 @@
 package flyproject.iplibrary;
 
-import flyproject.iplibrary.database.IPData;
-import flyproject.iplibrary.database.SQLData;
-
 public class Util {
     public static long getIPLong(String ip) {
         String[] items = ip.split("\\.");
