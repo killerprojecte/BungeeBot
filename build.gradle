@@ -30,7 +30,7 @@ dependencies {
     implementation 'com.mysql:mysql-connector-j:8.0.31'
     implementation 'org.xerial:sqlite-jdbc:3.40.0.0'
     compileOnly 'net.md-5:bungeecord-api:1.19-R0.1-SNAPSHOT'
-    implementation 'com.xbaimiao:mirai-http-sdk:1.0.4-beta-b1870ce'
+    implementation 'com.xbaimiao:mirai-http-sdk:1.0.4-beta-2bb9815'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
@@ -64,6 +64,7 @@ shadowJar {
     relocate("com.google.gson", "org.rgbmc.bungeebot.gson")
     relocate("com.j256.ormlite", "org.rgbmc.bungeebot.ormlite")
     relocate("com.zaxxer.hikari", "org.rgbmc.bungeebot.hikari")
+    relocate("com.xbaimiao.mirai", "org.rgbmc.bungeebot.mirai")
     archiveClassifier = ""
 }
 
