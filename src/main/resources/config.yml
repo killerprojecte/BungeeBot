@@ -1,0 +1,36 @@
+#mirai-api-http
+#机器人密钥
+bot:
+  url: "http://127.0.0.1:8080"
+  qq: 123456
+  key: "TOKEN"
+#MySQL配置
+mysql:
+  host: 127.0.0.1:3306
+  database: "bungeebot"
+  user: bungeebot
+  password: "bungeebot"
+  max-lifetime: 1800000
+  minimum-idle: 8
+  maximum-pool-size: 20
+  ssl: false
+#验证码随机字符
+random-key: "1234567890"
+#QQ打码
+mask:
+  #开始打码位置
+  start: 3
+  #结束打码位置(倒数)
+  end: 3
+#踢出信息
+kick-msg:
+  ip-unsafe-nodata: "&f&l白名单\n&8&m                                                \n&c&l系统检测到您正在一个陌生位置登录账号\n&c&l本次登录需要进行 &e&l身份确认 &c&l以保证账号安全\n&a&l请使用您的QQ: %mask_qq% &a&l向服务器官方群发送\n&e&l验证码: &f&l%code% &c&l有效期 &f&l5分钟\n&c&lIP属地: &f未知\n&8&m                                                \n&c&l由BungeeBot提供支持"
+  ip-unsafe: "&f&l白名单\n&8&m                                                \n&c&l系统检测到您正在一个陌生位置登录账号\n&c&l本次登录需要进行 &e&l身份确认 &c&l以保证账号安全\n&a&l请使用您的QQ: &f%mask_qq% &a&l向服务器官方群发送\n&e&l验证码: &f&l%code% &c&l有效期 &f&l5分钟\n&c&lIP属地: &f%province% %city% %isp%\n&8&m                                                \n&c&l由BungeeBot提供支持"
+  register-nodata: "&f&l白名单\n&8&m                                                \n&c&l您的账号尚未绑定\n&a&l请加入服务器官方群 &a&l12345678 &a&l并输入注册码\n&e&l验证码: &f&l%code% &c&l有效期 &f&l5分钟\n&c&lIP属地: &f未知\n&8&m                                                \n&c&l由BungeeBot提供支持"
+  register: "&f&l白名单\n&8&m                                                \n&c&l您的账号尚未绑定\n&a&l请加入服务器官方群 &a&l12345678 &a&l并输入注册码\n&e&l验证码: &f&l%code% &c&l有效期 &f&l5分钟\n&c&lIP属地: &f%province% %city% %isp%\n&8&m                                                \n&c&l由BungeeBot提供支持"
+  error: "&c&l无法登入服务器: 无法获取玩家的绑定数据\n&c&l请加入服务器官方Q群: &b12345678 &c&l并联系管理员"
+#群聊回复
+group-msg:
+  ip-update: "你的IP已更变, 请重新加入游戏"
+  exist: "您的QQ已在服务器注册, 请勿重复注册"
+  success: "您的注册已认证通过! 请重新加入服务器"

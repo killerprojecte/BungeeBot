@@ -1,0 +1,4 @@
+name: BungeeBot
+version: '${version}'
+main: org.rgbmc.bungeebot.BungeeBot
+description: A QQBot for Bungeecord
